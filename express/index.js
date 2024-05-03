@@ -18,9 +18,9 @@ const PORT = 5500;
 const app = express();
 //Middleware
 app.use(express.json());
-app.use(cors({
-    origin:corsOptions
-}));
+//app.use(cors({
+//    origin:corsOptions
+//}));
 
 //API config
 app.get('/chapter',async (req,res) => {
