@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 //Importing Database config 'Sequelize' and models 'init-models'
-const sequelize = require('../express/Sequelize');
+const sequelize = require('./Sequelize');
 let initModels = require("../models/init-models");
 const section = require('../models/section');
 //initModels lets us request from any model without needing to 
