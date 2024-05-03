@@ -13,7 +13,7 @@ const corsOptions = [
     'http://localhost:3000'
 ]
 //PORT Number
-const PORT = 5500;
+const PORT = process.env.PORT || 5500;
 
 const app = express();
 //Middleware
@@ -23,6 +23,10 @@ app.use(express.json());
 //}));
 
 //API config
+app.get('/ird',async (req,res) => {
+    res.status(200).send("express");
+})
+
 app.get('/chapter',async (req,res) => {
     const chapter = await models.chapter.findAll({
         attributes:["id","title","number","hadis_range","book_name"]
