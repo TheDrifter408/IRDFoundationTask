@@ -3,8 +3,8 @@ const express = require('express');
 const cors = require('cors');
 //Importing Database config 'Sequelize' and models 'init-models'
 const sequelize = require('./Sequelize');
-let initModels = require("../models/init-models");
-const section = require('../models/section');
+let initModels = require("../../models/init-models");
+const section = require('../../models/section');
 //initModels lets us request from any model without needing to 
 //to import it.
 let models = initModels(sequelize);
@@ -18,9 +18,9 @@ const PORT = process.env.PORT || 5500;
 const app = express();
 //Middleware
 app.use(express.json());
-//app.use(cors({
-//    origin:corsOptions
-//}));
+app.use(cors({
+    origin:corsOptions
+}));
 
 //API config
 app.get('/ird',async (req,res) => {
