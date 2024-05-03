@@ -10,7 +10,26 @@ import { BreadCrumb } from "./BreadCrumb";
 import { Chapter } from "./Chapter";
 
 const buttons = [
-    <FiCopy style={{color:"rgb(148 163 184)",fontSize:"25px"}} />,<FiBookmark style={{color:"rgb(148 163 184)",fontSize:"25px"}} />, <FiShare2 style={{color:"rgb(148 163 184)",fontSize:"25px"}} />, <FiAlertOctagon style={{color:"rgb(148 163 184)",fontSize:"25px"}} />, <FiArrowUpRight style={{color:"rgb(148 163 184)",fontSize:"25px"}} />
+    {
+        id:1,
+        icon:<FiCopy style={{color:"rgb(148 163 184)",fontSize:"25px"}} />
+    },
+    {
+        id:2,
+        icon:<FiBookmark style={{color:"rgb(148 163 184)",fontSize:"25px"}} />
+    },
+    {
+        id:3,
+        icon:<FiShare2 style={{color:"rgb(148 163 184)",fontSize:"25px"}} />
+    },
+    {
+        id:4,
+        icon:<FiAlertOctagon style={{color:"rgb(148 163 184)",fontSize:"25px"}} />
+    },
+    {
+        id:5,
+        icon:<FiArrowUpRight style={{color:"rgb(148 163 184)",fontSize:"25px"}} />
+    }
 ]
 
 
@@ -124,8 +143,8 @@ export default function Chapters({books,chapters,hadiths}:ChaptersProp){
                                     <h1>হাদিসের মান : <span className="bg-emerald-500 px-3 py-1.5 rounded-xl text-white">{hadith.grade}</span></h1>
                                     <div className="flex items-center gap-8">
                                         {
-                                            buttons.map((button,idx) => (
-                                                <button key={idx}>{button}</button>
+                                            buttons.map((button) => (
+                                                <button key={button.id}>{button.icon}</button>
                                             ))
                                         }
                                     </div>
