@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "express":"node express/express.js",
+    "express": "node src/api/index.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "sequelize-auto -o './models' -h localhost -d ./express/db/hadith_db.db -e sqlite"
+    "migrate": "sequelize-auto -o './src/models' -h localhost -d ./src/api/db/hadith_db.db -e sqlite"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",
+    "@sequelize/sqlite3": "^7.0.0-alpha.40",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "mysql2": "^3.9.7",

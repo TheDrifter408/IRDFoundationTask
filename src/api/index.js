@@ -1,6 +1,6 @@
 //Importing express and cors
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 //Importing Database config 'Sequelize' and models 'init-models'
 const sequelize = require('./Sequelize');
 let initModels = require("../../models/init-models");
@@ -13,7 +13,7 @@ const corsOptions = [
     'http://localhost:3000'
 ]
 //PORT Number
-const PORT = process.env.PORT || 5500;
+const PORT = 5500;
 
 const app = express();
 //Middleware
@@ -23,9 +23,6 @@ app.use(cors({
 }));
 
 //API config
-app.get('/ird',async (req,res) => {
-    res.status(200).send("express");
-})
 
 app.get('/chapter',async (req,res) => {
     const chapter = await models.chapter.findAll({

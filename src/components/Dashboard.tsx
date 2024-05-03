@@ -34,7 +34,7 @@ const icons = [
 const apiURL = process.env.API_URL;
 
 async function getChapters(){    
-    const res = await fetch(`${apiURL}/chapter`).then(res => {
+    const res = await fetch(`http://localhost:5500/chapter`).then(res => {
         return res.json();
     }).catch( err => {
         console.error("getChapters Error:",err);
@@ -43,7 +43,7 @@ async function getChapters(){
 }
 
 async function getBook(){
-    const res = await fetch(`${apiURL}/books`).then(
+    const res = await fetch(`http://localhost:5500/books`).then(
       res => {
         return res.json();
       }
@@ -54,7 +54,7 @@ async function getBook(){
   }
   
   async function getHadith(){
-    const res = await fetch(`${process.env.API_URL}/hadith/sections`).then(
+    const res = await fetch(`http://localhost:5500/hadith/sections`).then(
       res => {
         return res.json();
       }
