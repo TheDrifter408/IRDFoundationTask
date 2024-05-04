@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "express": "node src/api/index.js",
+    "express": "node /api/index.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "sequelize-auto -o './src/models' -h localhost -d ./src/api/db/hadith_db.db -e sqlite"
+    "migrate": "sequelize-auto -o './models' -h localhost -d ./api/db/hadith_db.db -e sqlite"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",

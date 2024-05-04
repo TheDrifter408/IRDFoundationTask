@@ -2,9 +2,8 @@
 const express = require("express");
 const cors = require("cors");
 //Importing Database config 'Sequelize' and models 'init-models'
-const sequelize = require('./Sequelize');
-let initModels = require("../../models/init-models");
-const section = require('../../models/section');
+const sequelize = require('./Sequelize.js');
+let initModels = require("../models/init-models");
 //initModels lets us request from any model without needing to 
 //to import it.
 let models = initModels(sequelize);
@@ -23,7 +22,6 @@ app.use(cors({
 }));
 
 //API config
-
 app.get('/chapter',async (req,res) => {
     const chapter = await models.chapter.findAll({
         attributes:["id","title","number","hadis_range","book_name"]
@@ -53,7 +51,7 @@ app.get('/section',async (req,res) => {
 })
 
 app.get('/hadith/sections',async (req,res) => {
-    const [results,metadata] = await sequelize.query(`SELECT hadith.hadith_id,hadith.section_id,section.section_id,narrator,bn,ar,ar_diacless,number,title,preface,grade,grade_color FROM hadith,section where section.section_id = hadith.section_id`,{
+    const [results,metadata] = await sequelize.query(`SELECT hadith.hadith_id,hadith.section_id,section.section_id,narrator,bn,ar,ar_diacless,number,title,preface,grade,grade_color FROM hadith,section where section.section_id = hadith.section_id;`,{
         raw:true,
     });
     res.status(200).json(results);

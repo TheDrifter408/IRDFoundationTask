@@ -1,6 +1,9 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("sqlite:./db/hadith_db.db");
+const sequelize = new Sequelize({
+    dialect:'sqlite',
+    storage:'./db/hadith_db.db'
+});
 
 async function Connect() {
     try{
